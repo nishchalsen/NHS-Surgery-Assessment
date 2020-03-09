@@ -1,0 +1,11 @@
+<h1 style="text-align: center;">Patient Feedback Dashboard</h1>
+
+<div class="w3-container" style="border: 2px cornflowerblue solid ; border-radius: 10px; padding-bottom: 1em; overflow: hidden">
+  <div *ngIf="feedback_obj.length > 0">
+    <div *ngFor="let response of feedback_obj;let i = index">
+      <div style="width: 47.5%; float:left; margin: 10px">
+        <canvas id=chartContainer{{i}}></canvas>
+      </div>
+    </div>
+  </div>
+</div>

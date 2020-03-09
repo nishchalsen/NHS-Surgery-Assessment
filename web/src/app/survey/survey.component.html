@@ -1,0 +1,47 @@
+
+<h1>Assessment Management</h1>
+
+<div class="container add-question">
+  <div class="card" style="margin-top: 1.5em">
+    <div class="card-body" style="text-align: right">
+      <input id="edit_ID" type="number" style="width:8%; float:left; text-align:center" value="" placeholder="ID" class="form-control" [(ngModel)]="input_ID">
+      <input id="edit_question" type="text" style="width:90%; float:left" value="" placeholder="Please Enter Question Text Here..." class="form-control" [(ngModel)]="input_question">
+      <div style="padding-top: 10px">
+        <button class="btn btn-success btn-fill"  (click)="addQuestion()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>↑ ↓</th>
+            <th>Type</th>
+            <th>ID</th>
+            <th>Question</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tr *ngFor="let q of filterBy('pos')">
+          <button type="button" (click)="moveup(q)" class="btn btn-primary btn-sm" style="outline: 1px solid white">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+          </button>
+          <button type="button" (click)="movedown(q)" class="btn btn-primary btn-sm" style="outline: 1px solid white">
+              <span class="glyphicon glyphicon-chevron-down"></span>
+          </button>
+          <td><button class= "{{ q.type == 'yes/no' ? 'btn btn-square btn-info' : 'btn btn-square btn-outline-info' }}" (click)="toggletype(q)">{{ q.type == 'yes/no' ? 'Y / N' : 'TEXT' }}</button></td>
+          <td>{{q.questionID}}</td>
+          <td>{{q.question}}</td>
+          <td><button class="btn btn-danger" (click)="delete(q)">Del</button></td>
+          <td><button class="btn btn-info" (click)="edit(q)">Edit</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

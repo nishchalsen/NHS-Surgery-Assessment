@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Patient Feedback</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let q of feedbackQuestion">
+
+    <ion-card-content>
+      {{q.feedbackQuestionID}}. {{q.feedbackQuestion}}.
+    </ion-card-content>
+
+    <ion-radio-group>
+      <ion-row>
+        <ion-col>
+            <ion-item>
+              <ion-icon class='button angry' src="assets/icon/angry.svg"></ion-icon>
+              <ion-radio slot="start" (ionSelect)="option(1,q.feedbackQuestionID)"></ion-radio>
+            </ion-item>
+        </ion-col>
+      
+        <ion-col>
+            <ion-item>
+              <ion-icon class='button sad'  src="assets/icon/sadd.svg"></ion-icon>
+              <ion-radio slot="start" (ionSelect)="option(2,q.feedbackQuestionID)"></ion-radio>
+            </ion-item>
+        </ion-col>
+
+        <ion-col>
+            <ion-item>
+              <ion-icon class='button neutral'  src="assets/icon/sad.svg"></ion-icon>
+              <ion-radio slot="start" (ionSelect)="option(3,q.feedbackQuestionID)"></ion-radio>
+            </ion-item>
+        </ion-col>
+
+        <ion-col>
+            <ion-item>
+              <ion-icon class='button happy'  src="assets/icon/happy.svg"></ion-icon>
+              <ion-radio slot="start" (ionSelect)="option(4,q.feedbackQuestionID)"></ion-radio>
+            </ion-item>
+        </ion-col>
+
+        <ion-col>
+            <ion-item>
+              <ion-icon class='button in-love'  src="assets/icon/in-love.svg"></ion-icon>
+              <ion-radio slot="start" (ionSelect)="option(5,q.feedbackQuestionID)"></ion-radio>
+            </ion-item>
+        </ion-col>
+      </ion-row>
+      
+    </ion-radio-group>
+
+  </ion-card>
+
+  <div style="position: relative; text-align: center;">
+    <ion-button (click)="submit()" color="success" expand="block">Submit</ion-button>
+  </div>  
+
+</ion-content>

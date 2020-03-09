@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start" fill="clear">
+      <ion-back-button defaultHref="tabs/history" text="Back"></ion-back-button>
+    </ion-button>
+    <ion-title>{{history.date}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-card *ngFor="let q of history.answer; let i = index">
+        <ion-card-header>
+          <ion-card-content>
+            {{i + 1}}. {{q.question}}
+          </ion-card-content>
+        </ion-card-header>
+        <ion-card-content>
+          <div *ngIf="q.type === 1" style="text-align: center">
+              <ion-button color="primary" *ngIf="q.answer == 'yes' ">Yes</ion-button>
+              <ion-button color="danger" *ngIf="q.answer == 'no' " >No</ion-button>
+            </div>
+        
+            <ion-item *ngIf="q.type === 2">
+              <ion-label position="stacked" style="font-size: 13px">Answer:</ion-label>
+              <ion-textarea disabled readonly>
+                {{q.answer}}
+              </ion-textarea>
+            </ion-item>
+        </ion-card-content>
+        
+    </ion-card>
+
+</ion-content>

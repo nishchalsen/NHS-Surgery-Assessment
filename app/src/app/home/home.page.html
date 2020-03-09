@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button float-right (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+    </ion-button>
+    <ion-title style="font-size: 32px">Welcome</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+
+  <ion-title style="padding-top: 2em; font-size: 20px">{{currentDate | date:'fullDate'}}</ion-title>
+  <ion-title style="font-weight: bold; font-size: 25px">Today</ion-title>
+
+  <ion-card style="border-radius: 10px">
+    <ion-img src="/assets/home.jpg"></ion-img>
+  </ion-card>
+</ion-content>

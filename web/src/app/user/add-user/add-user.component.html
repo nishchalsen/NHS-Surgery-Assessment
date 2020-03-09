@@ -1,0 +1,95 @@
+<h1>Add User</h1>
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="add_user()">
+          <div class="form-group" [ngClass]="{'has-error':formErrors.username}">
+            <label class="control-label" for="username">Staff Username: </label>
+            <input id="username" type="text" formControlName="username" class="form-control" placeholder="Enter your username" 
+            (blur)="logValidationErrors()">
+            <span class="help-block" *ngIf="formErrors.username">
+              {{formErrors.username}}
+            </span>
+          </div>
+          <div  formGroupName="passwordGroup">
+            <div class="form-group" [ngClass]="{'has-error':formErrors.password}">
+              <label class="control-label" for="password">Password: </label>
+              <input id="password" type="password" formControlName="password" class="form-control" placeholder="Enter your password" 
+              (blur)="logValidationErrors()">
+              <span class="help-block" *ngIf="formErrors.password">
+                {{formErrors.password}}
+              </span>
+            </div>
+  
+            <div class="form-group" [ngClass]="{'has-error':formErrors.confirm_password || formErrors.passwordGroup}">
+              <label class="control-label" for="confirm_password">Confirm Password: </label>
+              <input id="confirm_password" type="password" formControlName="confirm_password" class="form-control" placeholder="Confirm your password" 
+              (blur)="logValidationErrors()">
+              <span class="help-block" *ngIf="formErrors.confirm_password || formErrors.passwordGroup">
+                {{formErrors.confirm_password ? formErrors.confirm_password : formErrors.passwordGroup}}
+              </span>
+            </div>
+          </div>
+          
+          <div class="form-group" [ngClass]="{'has-error':formErrors.firstname}">
+            <label class="control-label" for="firstname">First Name: </label>
+            <input id="firstname" type="text" formControlName="firstname" class="form-control" placeholder="Enter your first name" 
+            (blur)="logValidationErrors()">
+            <span class="help-block" *ngIf="formErrors.firstname">
+              {{formErrors.firstname}}
+            </span>
+          </div>
+
+          <div class="form-group" [ngClass]="{'has-error':formErrors.lastname}">
+            <label class="control-label" for="lastname">Last Name: </label>
+            <input id="lastname" type="text" formControlName="lastname" class="form-control" placeholder="Enter your last name" 
+            (blur)="logValidationErrors()">
+            <span class="help-block" *ngIf="formErrors.lastname">
+              {{formErrors.lastname}}
+            </span>
+          </div>
+
+          <div class="form-group" [ngClass]="{'has-error':formErrors.email}">
+            <label class="control-label" for="email">Email: </label>
+            <input id="email" type="email" formControlName="email" class="form-control" placeholder="Enter your email" 
+            (blur)="logValidationErrors()">
+            <span class="help-block" *ngIf="formErrors.email">
+              {{formErrors.email}}
+            </span>
+          </div>
+
+          <div class="form-group" [ngClass]="{'has-error':formErrors.phone}">
+            <label class="control-label" for="phone">Mobile Number: </label>
+            <input id="phone" type="number" formControlName="phone" class="form-control" placeholder="Enter your mobile number" 
+            (blur)="logValidationErrors()">
+            <span class="help-block" *ngIf="formErrors.phone">
+              {{formErrors.phone}}
+            </span>
+          </div>
+      
+          <div class="form-group" [ngClass]="{'has-error':formErrors.userRole}">
+            <label class="control-label" for="userRole">User Role: </label>
+            <select class="form-control" formControlName="userRole" id="userRole"
+            (blur)="logValidationErrors()">
+              <option>Admin</option>
+              <option>NHS Staff</option>
+            </select> 
+            <span class="help-block" *ngIf="formErrors.userRole">
+              {{formErrors.userRole}}
+            </span>
+          </div>
+
+          <div *ngIf="invalid" class="alert alert-danger">{{invalid}}</div>
+          <div *ngIf="valid" class="alert alert-success">{{valid}}</div>
+
+          <div class="container text-center" style="padding-top: 2em">
+            <button class="btn btn-primary">Enter</button>
+          </div>
+          
+          
+
+        </form>
+    </div>
+  </div>
+</div>

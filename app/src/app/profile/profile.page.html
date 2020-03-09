@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-img src="/assets/profile_pic.png" ></ion-img>
+
+    <ion-list>
+        <ion-item>
+          <ion-label position="floating">NHS Number</ion-label>
+          <ion-note slot="end">{{userData.NHSno}}</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">First Name</ion-label>
+          <ion-note slot="end">{{userData.firstname}}</ion-note>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="floating">Last Name</ion-label>
+          <ion-note slot="end">{{userData.lastname}}</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-note slot="end">{{userData.email}}</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Mobile Number</ion-label>
+          <ion-note slot="end">{{userData.phone}}</ion-note>
+        </ion-item>
+
+    </ion-list>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Assessment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngFor="let q of all_question; let i = index">
+    <ion-card-content>
+      {{i + 1}}. {{q.question}}
+    </ion-card-content>
+
+    <ion-card-content>
+      <div *ngIf="q.type === 'yes/no'" style="text-align: center">
+        <ion-radio-group>
+          <ion-row>
+            <ion-col>
+                <ion-item>
+                  <ion-label>Yes</ion-label>
+                  <ion-radio slot="start" (ionSelect)="yes(i)"></ion-radio>
+                </ion-item>
+            </ion-col>
+
+            <ion-col>
+                <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio slot="start" (ionSelect)="no(i)"></ion-radio>
+                </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-radio-group>
+      </div>
+      
+      <ion-item *ngIf="q.type === 'free text'" style="margin: 5px">
+        <ion-label position="floating" style="color: #66615b; font-size: 13px">Write here ...</ion-label>
+        <ion-textarea [(ngModel)] = "q.answers"></ion-textarea>
+      </ion-item>
+    </ion-card-content>
+
+  </ion-card>
+
+  <div style="position: relative; text-align: center;">
+    <ion-button (click)="submit()" color="success" expand="block">Submit</ion-button> 
+  </div>
+
+</ion-content>

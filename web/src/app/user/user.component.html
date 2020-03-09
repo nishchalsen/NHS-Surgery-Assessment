@@ -1,0 +1,56 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<h1>User Management</h1>
+
+
+<div class="container">
+  <button class="btn btn-secondary"  (click)="addUser()" style="margin-bottom: 2em">Add New User</button>
+  <div class="card">
+    <div class="card-body">
+      <table class="table text-center">
+        <caption><span class="glyphicon glyphicon-user" ></span> Admin</caption>
+        <thead class="thead-dark">
+          <tr>
+            <th></th>
+            <th>Staff Username</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <!-- <th>User Role</th> -->
+            <th>Status</th>
+            <th>Remove</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let u of u_obj">
+          <td><span *ngIf="u.roleName=='admin'" class="glyphicon glyphicon-user"></span></td>
+          <td>{{u.username}}</td>
+          <td>{{u.phone}}</td>
+          <td>{{u.email}}</td>
+          <td>{{u.firstname}}</td>
+          <td>{{u.lastname}}</td>
+          <!-- <td>{{u.roleName}}</td> -->
+          <td>{{u.description}}</td>
+          <td>
+            <button *ngIf="u.description=='current worker'" class="btn btn-danger" (click)="delete(u)">Remove</button>
+          </td>
+          <td>
+            <button class="{{ u.userRoleID == 1 ? 'btn btn-info' : 'btn btn-success' }}" (click)="edit_user(u)">{{ u.userRoleID == 1 ? 'Nurse' : 'Admin' }}</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $("tr").each(function(){
+        var value = $(this).find("td:eq(7)").text();
+        if($.trim(value.toLowerCase()) == 'current worker'){
+            $(this).addClass('current');  
+        }
+    });   
+  });
+</script>
+

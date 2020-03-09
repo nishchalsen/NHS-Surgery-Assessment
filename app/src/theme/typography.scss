@@ -1,0 +1,51 @@
+$font-color:                 #66615b !default;
+$fill-font-color:            rgba(255, 255, 255, 0.8);
+$font-family-sans-serif:     'Montserrat', 'Helvetica', Arial, sans-serif;
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, a, .td-name, td, button, input, select{
+    -moz-osx-font-smoothing: grayscale !important;
+    -webkit-font-smoothing: antialiased !important;
+    font-family: $font-family-sans-serif !important;
+}
+
+ion-card-title, .ion-card-title{
+    font-family: $font-family-sans-serif !important;
+    color: $font-color;
+    font-size: 40px;
+}
+
+ion-title, .ion-title{
+    font-family: $font-family-sans-serif !important;
+    font-size: 30px;
+    // text-align: center !important;
+    margin: 3px;
+}
+
+ion-card-content, .ion-card-content{
+    font-family: $font-family-sans-serif !important;
+    color: $font-color;
+    font-size: 15px;
+    text-align: left;
+}
+
+ion-button, .ion-button{
+    font-family: $font-family-sans-serif !important;
+}
+
+ion-label, .ion-label, ion-item, .ion-item{
+    font-family: $font-family-sans-serif !important;
+    color: $font-color;
+    // font-size: 10px;
+}
+
+textarea{
+    font-family: $font-family-sans-serif !important;
+    color: $font-color;
+    font-size: 10px;
+}
+
+ion-note, .ion-note{
+    font-family: $font-family-sans-serif !important;
+    color: #928f8c;
+    font-size: 16px;
+    max-width: 50%
+}

@@ -1,0 +1,58 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+@import './theme/fonts.scss';
+@import './theme/typography.scss';
+
+ion-icon {
+  &.button {
+    width: 33px;
+    height: 33px;
+  }
+
+  &.bigger {
+    width: 50px;
+    height: 50px;
+  }
+
+  &.in-love {
+    color: #75bb38 
+  }
+
+  &.happy {
+    color: #b2d242
+  }
+
+  &.neutral {
+    color: #f6ca45
+  }
+
+  &.sad {
+    color: #e8975a
+  }
+
+  &.angry {
+    color: #df643f
+  }
+}
+
+// hide the spinner button 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; 
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}

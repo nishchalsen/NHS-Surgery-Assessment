@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  
+  <ion-card *ngFor="let history of allHistory; let i = index" (click)="viewHistory(history)">
+
+  <ion-card-header>
+      <ion-card-content>
+        ({{i+1}}) {{history.completeTime}}
+      </ion-card-content>
+
+    </ion-card-header>
+  
+    </ion-card>
+
+</ion-content>

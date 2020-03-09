@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./assets/sass/paper-kit.scss";
+
+@media screen and (max-width: 991px) {
+    #navbar-info.navbar-collapse{
+        height: calc(100% - 183px);
+        top:183px;
+    }
+    // #navbar-info.show{
+    //     transform: none !important;
+    // }
+    #navbar-transparent.navbar-collapse{
+        height: calc(100%);
+        top:0px;
+    }
+    // #navbar-transparent.show{
+    //     transform: none !important;
+    // }
+}
+
+// hide the spinner button 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; 
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}

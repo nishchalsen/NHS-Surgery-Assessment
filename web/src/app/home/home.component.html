@@ -1,0 +1,48 @@
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="450" *ngIf=apiService.isLoggedIn()>
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" routerLink="/home">Home</a>
+            <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbar-transparent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+            </button>
+        </div>
+        <div id="navbar-info" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/patient">View Patient</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/survey">Assessment Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/feedback">Feedback Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/surveyresults">Assessment Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/user" *ngIf=apiService.isAdmin()>User Management </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="apiService.logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="wrapper">
+    <div class="documentation page-header" style="background-image: url('../../assets/img/IMG_0130_2.jpeg')">
+        <div class="container">
+            <div class="filter"></div>
+            <div class="motto">
+                <h4 style="color: white; text-align: left;">Hi, {{firstname}}</h4>
+                <h1 class="title-uppercase text-center" style="font-weight:900;">Welcome to</h1>
+                <h2 class="text-center">Pre Operative Assessment Screening Tool</h2>
+            </div>
+        </div>
+    </div>
+</div>
